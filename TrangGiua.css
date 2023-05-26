@@ -1,0 +1,54 @@
+.active {
+  /* Custom style for active button */
+  background-color: #ff0000; /* Change color as needed */
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://img5.thuthuatphanmem.vn/uploads/2021/07/09/anh-background-bien-xanh-cat-trang_025525432.jpg");
+  /* background-repeat: repeat; */
+  background-size: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+body div {
+  width: 500px;
+  height: auto;
+  margin: 10px;
+}
+body div div {
+  margin: 10px;
+}
+/* #container_Radio {
+}
+#container_Checkbox {
+}
+#container_Button {
+}
+#container_Options {
+} */
+.Answers_Button input {
+  width: 200px;
+  height: 30px;
+  display: flex;
+}
+.QuestionAnswers_Options input {
+  display: flex;
+  width: 200px;
+  height: 30px;
+}
+.Answers_Options select {
+  position: relative;
+  display: flex;
+  width: 208px;
+  height: 36px;
+  left: 300px;
+  top: -255px;
+  margin: 20px;
+}
+.Answers_Options {
+  width: 0px;
+  height: 0px;
+}

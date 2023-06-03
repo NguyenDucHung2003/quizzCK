@@ -1,25 +1,35 @@
 .active {
-  /* Custom style for active button */
-  background-color: #ff0000; /* Change color as needed */
+     background-color: #54e369; /* Change color as needed */
 }
+.Answers_Button_Input:hover {
+     background-color: #54e369;
+}
+
+input[type="radio"],
+input[type="checkbox"],
+select {
+     cursor: pointer;
+}
+
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-image: url("https://img5.thuthuatphanmem.vn/uploads/2021/07/09/anh-background-bien-xanh-cat-trang_025525432.jpg");
-  /* background-repeat: repeat; */
-  background-size: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+     background-color: antiquewhite;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     /* background-image: url("https://img5.thuthuatphanmem.vn/uploads/2021/07/09/anh-background-bien-xanh-cat-trang_025525432.jpg"); */
+     background-repeat: repeat;
+     background-size: 100%;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 20px;
 }
 body div {
-  width: 500px;
-  height: auto;
-  margin: 10px;
+     width: 500px;
+     height: auto;
+     margin: 10px;
 }
 body div div {
-  margin: 10px;
+     margin: 10px;
 }
 /* #container_Radio {
 }
@@ -30,25 +40,130 @@ body div div {
 #container_Options {
 } */
 .Answers_Button input {
-  width: 200px;
-  height: 30px;
-  display: flex;
+     width: 200px;
+     height: 30px;
+     display: flex;
 }
 .QuestionAnswers_Options input {
-  display: flex;
-  width: 200px;
-  height: 30px;
+     display: flex;
+     width: 200px;
+     height: 30px;
 }
 .Answers_Options select {
-  position: relative;
-  display: flex;
-  width: 208px;
-  height: 36px;
-  left: 300px;
-  top: -255px;
-  margin: 20px;
+     position: relative;
+     display: flex;
+     width: 208px;
+     height: 36px;
+     left: 300px;
+     top: -255px;
+     margin: 20px;
 }
 .Answers_Options {
-  width: 0px;
-  height: 0px;
+     width: 0px;
+     height: 0px;
+}
+.Answer_Text {
+     display: block;
+     width: 300px;
+     height: 30px;
+}
+.Information_Account {
+     display: flex;
+     justify-content: center;
+     font-size: 30px;
+}
+#content-fixed {
+     position: fixed;
+     width: 500px;
+     top: -10px;
+     left: 0px;
+     z-index: -1;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+}
+
+#TypeRadio_1,
+#TypeRadio_2,
+#TypeRadio_3,
+#TypeRadio_4,
+#TypeRadio_5 {
+     margin-bottom: 20px;
+     width: 550px;
+     height: 340px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+}
+.inputRadio {
+     width: auto;
+     height: 50px;
+     line-height: 50px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+     background-color: white;
+     border-radius: 10px;
+     margin: 15px;
+}
+.inputRadio:hover {
+     background-color: #54e369;
+}
+.Answers_Radio {
+     margin-top: 30px;
+}
+
+#TypeCheckBox_1,
+#TypeCheckBox_2,
+#TypeCheckBox_3,
+#TypeCheckBox_4,
+#TypeCheckBox_5 {
+     margin-bottom: 20px;
+     width: 550px;
+     height: 340px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+}
+.TypeCheckBoxChild {
+     border: 1px solid black;
+     height: 50px;
+     line-height: 50px;
+}
+.TypeCheckBoxChild:hover {
+     background-color: #54e369;
+}
+.TypeButton {
+     width: 550px;
+     margin-bottom: 20px;
+     height: 340px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+}
+.Answers_Button {
+     margin-top: 35px;
+}
+.TypeButtonChild {
+     margin: 20px;
+}
+.TypeButtonChild input {
+     width: 400px;
+     height: 45px;
+}
+.TypeOptions {
+     width: 550px;
+     margin-bottom: 20px;
+     height: 340px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+}
+.QuestionAnswers_Options {
+     margin-top: 50px;
+}
+.TypeText {
+     width: 550px;
+     margin-bottom: 20px;
+     height: auto;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+}
+.Answer_Text {
+     margin-top: 50px;
+     width: 543px;
 }

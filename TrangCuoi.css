@@ -1,58 +1,200 @@
-.active {
-  background-color: #ff0000; /* Change color as needed */
-}
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-image: url("https://img5.thuthuatphanmem.vn/uploads/2021/07/09/anh-background-bien-xanh-cat-trang_025525432.jpg");
-  /* background-repeat: repeat; */
-  background-size: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+     background-color: antiquewhite;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 20px;
 }
 body div {
-  width: 500px;
-  height: auto;
-  margin: 10px;
+     width: 500px;
+     height: auto;
+     margin: 10px;
 }
 body div div {
-  margin: 10px;
-}
-/* #container_Radio {
-  }
-  #container_Checkbox {
-  }
-  #container_Button {
-  }
-  #container_Options {
-  } */
-.Answers_Button input {
-  width: 200px;
-  height: 30px;
-  display: flex;
+     margin: 10px;
 }
 .QuestionAnswers_Options input {
-  display: flex;
-  width: 200px;
-  height: 30px;
+     display: flex;
+     width: 200px;
+     height: 30px;
 }
 .Answers_Options select {
-  position: relative;
-  display: flex;
-  width: 208px;
-  height: 36px;
-  left: 300px;
-  top: -255px;
-  margin: 20px;
+     position: relative;
+     display: flex;
+     width: 208px;
+     height: 36px;
+     left: 300px;
+     top: -255px;
+     margin: 20px;
 }
 .Answers_Options {
-  width: 0px;
-  height: 0px;
+     width: 0px;
+     height: 0px;
 }
-#test {
-  width: 500px;
-  height: 300px;
-  border: 3px solid red;
+
+@keyframes blink {
+     50% {
+          opacity: 0.3;
+     }
+}
+.AnswerYesRadio,
+.AnswerYesCheckBox,
+.AnswerYesButton,
+.AnswerYesSelect,
+.AnswerYesText {
+     border: 1px solid red;
+     color: skyblue;
+     animation: blink 1s linear infinite;
+}
+.Answers_Text input {
+     width: 500px;
+     height: 25px;
+}
+.Information_Account {
+     display: flex;
+     justify-content: center;
+     font-size: 30px;
+}
+#container-DangXuat {
+     width: 100px;
+     height: 50px;
+}
+
+.Answer_Text {
+     display: block;
+     width: 300px;
+     height: 30px;
+}
+.Information_Account {
+     display: flex;
+     justify-content: center;
+     font-size: 30px;
+}
+#container_count_TrangCuoi {
+     position: fixed;
+     width: 500px;
+     top: -10px;
+     left: 0px;
+     z-index: -1;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+}
+
+.TypeRadio {
+     margin-bottom: 20px;
+     width: 550px;
+     height: auto;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+}
+.TypeQuestionRadioChild {
+     width: auto;
+     height: 50px;
+     line-height: 50px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+     background-color: white;
+     border-radius: 10px;
+     margin: 15px;
+}
+.AnswerYesRadio {
+     background-color: black;
+     width: 500px;
+     height: 50px;
+}
+.RadioChecked {
+     width: auto;
+     height: 50px;
+     line-height: 50px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+     background-color: white;
+     border-radius: 10px;
+     margin: 15px;
+     background-color: red;
+}
+
+.TypeCheckBox {
+     margin-bottom: 20px;
+     width: 550px;
+     height: auto;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+}
+.TypeQuestionCheckBoxChild {
+     background-color: #fff;
+     border: 1px solid black;
+     height: 50px;
+     line-height: 50px;
+}
+
+.CheckBoxChecked {
+     background-color: red;
+     border: 1px solid black;
+     height: 50px;
+     line-height: 50px;
+}
+.AnswerYesCheckBox {
+     background-color: black;
+     width: 500px;
+     height: 50px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 20px;
+}
+
+.TypeQuestionButton {
+     width: 550px;
+     margin-bottom: 20px;
+     height: auto;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+}
+.TypeQuestionButton input {
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 20px;
+}
+.TypeQuestionButtonChild input {
+     width: 500px;
+     height: 40px;
+     text-align: left;
+}
+.active {
+     width: 500px;
+     height: 40px;
+     text-align: left;
+     background-color: red;
+}
+.AnswerYesButton {
+     background-color: black;
+     width: 500px;
+     height: 50px;
+}
+.TypeQuestionOption {
+     width: 550px;
+     margin-bottom: 20px;
+     height: auto;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+}
+.AnswerYesSelect {
+     background-color: black;
+     width: 530px;
+     height: 50px;
+}
+.QuestionAnswers_Options {
+     margin-top: 50px;
+}
+.TypeQuestionText {
+     width: 550px;
+     margin-bottom: 20px;
+     height: 150px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+}
+.AnswerYesText {
+     background-color: black;
+     width: 530px;
+     height: auto;
 }

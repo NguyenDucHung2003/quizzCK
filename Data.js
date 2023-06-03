@@ -22,9 +22,9 @@ const questionData = [
                "Câu 2. Phần nào của file HTML được đặt mã tham chiếu tới CSS bên ngoài?",
           answers: [
                { id: "2_a", value: "a", label: "Trong thẻ 	&lt;body&gt;" },
-               { id: "2_c", value: "b", label: "Ở phía cuối của file HTML" },
+               { id: "2_b", value: "b", label: "Ở phía cuối của file HTML" },
                { id: "2_c", value: "c", label: "Ở phần đầu của file HTML" },
-               { id: "2_c", value: "d", label: "Trong thẻ &lt;head&gt;" },
+               { id: "2_d", value: "d", label: "Trong thẻ &lt;head&gt;" },
           ],
           answerYes: {
                id: "2_a",
@@ -115,6 +115,8 @@ const questionDataCheckBox = [
           answers: [
                { id: "7_a", value: "a", label: "Hyper Text Markup Language" },
                { id: "7_b", value: "b", label: "hypertensi markup language" },
+               { id: "7_c", value: "c", label: "hypertensi markup language" },
+               { id: "7_d", value: "d", label: "hypertensi markup language" },
           ],
           answerYes: [
                {
@@ -131,6 +133,8 @@ const questionDataCheckBox = [
           answers: [
                { id: "8_a", value: "a", label: "Hyper Text Markup Language" },
                { id: "8_b", value: "b", label: "hypertensi markup language" },
+               { id: "8_c", value: "c", label: "hypertensi markup language" },
+               { id: "8_d", value: "d", label: "hypertensi markup language" },
           ],
           answerYes: [
                {
@@ -147,6 +151,8 @@ const questionDataCheckBox = [
           answers: [
                { id: "9_a", value: "a", label: "Hyper Text Markup Language" },
                { id: "9_b", value: "b", label: "hypertensi markup language" },
+               { id: "9_c", value: "c", label: "hypertensi markup language" },
+               { id: "9_d", value: "d", label: "hypertensi markup language" },
           ],
           answerYes: [
                {
@@ -163,6 +169,8 @@ const questionDataCheckBox = [
           answers: [
                { id: "10_a", value: "a", label: "Hyper Text Markup Language" },
                { id: "10_b", value: "b", label: "hypertensi markup language" },
+               { id: "10_c", value: "c", label: "hypertensi markup language" },
+               { id: "10_d", value: "d", label: "hypertensi markup language" },
           ],
           answerYes: [
                {
@@ -454,9 +462,42 @@ const questionOptions = [
           ],
      },
 ]
+const questionText = [
+     {
+          id: 21,
+          type: "questionText",
+          question: "21.Số nhỏ nhất là bao nhiêu ?",
+          answersYes: "1",
+     },
+     {
+          id: 22,
+          type: "questionText",
+          question: "22.Số nhỏ nhất là bao nhiêu ?",
+          answersYes: "1",
+     },
+     {
+          id: 23,
+          type: "questionText",
+          question: "23.Số nhỏ nhất là bao nhiêu ?",
+          answersYes: "1",
+     },
+     {
+          id: 24,
+          type: "questionText",
+          question: "24.Số nhỏ nhất là bao nhiêu ?",
+          answersYes: "1",
+     },
+     {
+          id: 25,
+          type: "questionText",
+          question: "25.Số nhỏ nhất là bao nhiêu ?",
+          answersYes: "1",
+     },
+]
 export {
      questionData,
      questionDataCheckBox,
      questionDataButton,
      questionOptions,
+     questionText,
 }

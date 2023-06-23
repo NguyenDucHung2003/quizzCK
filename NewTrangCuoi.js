@@ -1,4 +1,4 @@
-import { QuestionSum } from "./Data.js"
+import { newQuestionSum } from "./Data.js"
 const $ = (id) => document.getElementById(id)
 let x = JSON.parse(localStorage.getItem("countacc"))
 if (x <= 0) {
@@ -245,44 +245,55 @@ const getDataOptionsFake = (data) => {
 VoidDataText()
 function VoidDataText() {
      const divText = document.getElementById("container_Text_TrangCuoi")
-     const html = QuestionSum.map((question) => {
-          if (question.type == "questionText") return getDataText(question)
-     }).join("")
+     const html = newQuestionSum
+          .map((question) => {
+               if (question.type == "questionText") return getDataText(question)
+          })
+          .join("")
      divText.innerHTML = html
 }
 
 VoidDataRadio()
 function VoidDataRadio() {
      const divRadio = document.getElementById("container_TrangCuoi")
-     const html = QuestionSum.map((question) => {
-          if (question.type == "questionRadio") return check(question)
-     }).join("")
+     const html = newQuestionSum
+          .map((question) => {
+               if (question.type == "questionRadio") return check(question)
+          })
+          .join("")
      divRadio.innerHTML = html
 }
 
 VoidDataCheckBox()
 function VoidDataCheckBox() {
      const divCheckBox = document.getElementById("container_CheckBox_TrangCuoi")
-     const html = QuestionSum.map((question) => {
-          if (question.type == "questionCheckBox") return check(question)
-     }).join("")
+     const html = newQuestionSum
+          .map((question) => {
+               if (question.type == "questionCheckBox") return check(question)
+          })
+          .join("")
      divCheckBox.innerHTML = html
 }
 VoidDataButton1()
 function VoidDataButton1() {
      const divButton = document.getElementById("container_Button_TrangCuoi")
-     const html = QuestionSum.map((question) => {
-          if (question.type == "questionButton") return getDataButton(question)
-     }).join("")
+     const html = newQuestionSum
+          .map((question) => {
+               if (question.type == "questionButton")
+                    return getDataButton(question)
+          })
+          .join("")
      divButton.innerHTML = html
 }
 VoidDataOptions()
 function VoidDataOptions() {
      const divButton = document.getElementById("container_Options_TrangCuoi")
-     const html = QuestionSum.map((question) => {
-          if (question.type == "questionOptions")
-               return getDataOptionsFake(question)
-     }).join("")
+     const html = newQuestionSum
+          .map((question) => {
+               if (question.type == "questionOptions")
+                    return getDataOptionsFake(question)
+          })
+          .join("")
      divButton.innerHTML = html
 }
 
@@ -372,93 +383,104 @@ questionsText.forEach((question) => {
 })
 $("container-map").innerHTML = `<table>
 <tr>
-     ${QuestionSum.map((x, index) => {
-          if (x.type == "questionRadio") {
-               let check = false
-               if (
-                    x.answerYes.id ===
-                    `${LastDataRadio[index].numberAnswer}_${LastDataRadio[index].result}`
-               ) {
-                    check = true
-               }
-               if (check)
-                    return `<td class="dung"><a href="#${x.id}">${x.id}</a></td>`
-               return `<td class="sai"><a href="#${x.id}">${x.id}</a></td>`
-          }
-     }).join("")}
-</tr>
-<tr>
-     ${QuestionSum.map((x) => {
-          if (x.type == "questionCheckBox") {
-               let check = false
-               x.answerYes.forEach((answer) => {
-                    if (number_resultsCheckBoxArray.includes(answer.id)) {
-                         check = true
-                    } else {
-                         check = false
-                    }
-               })
-               if (check)
-                    return `<td class="dung"><a href="#${x.id}">${x.id}</a></td>`
-               return `<td class="sai"><a href="#${x.id}">${x.id}</a></td>`
-          }
-     }).join("")}
-</tr>
-<tr>
-     ${QuestionSum.map((x) => {
-          if (x.type == "questionButton") {
-               let check = false
-               DataButton.forEach((answer) => {
+     ${newQuestionSum
+          .map((x, index) => {
+               if (x.type == "questionRadio") {
+                    let check = false
                     if (
                          x.answerYes.id ===
-                         `${answer.numberAnswer_Button}_${answer.result_Button}`
-                    )
+                         `${LastDataRadio[index].numberAnswer}_${LastDataRadio[index].result}`
+                    ) {
                          check = true
-               })
-
-               if (check)
-                    return `<td class="dung"><a href="#${x.id}">${x.id}</a></td>`
-               return `<td class="sai"><a href="#${x.id}">${x.id}</a></td>`
-          }
-     }).join("")}
-</tr>
-<tr>
-     ${QuestionSum.map((x) => {
-          if (x.type == "questionOptions") {
-               let checked = false
-               for (let i = 0; i < x.yesAnswerYes.length; i++) {
-                    if (
-                         x.yesAnswerYes[i].id === number_resultsOptionsArray[i]
-                    ) {
-                         checked = true
-                    } else {
-                         checked = false
                     }
+                    if (check)
+                         return `<td class="dung"><a href="#${x.id}">${x.id}</a></td>`
+                    return `<td class="sai"><a href="#${x.id}">${x.id}</a></td>`
                }
-               if (checked)
-                    return `<td class="dung"><a href="#${x.id}">${x.id}</a></td>`
-               return `<td class="sai"><a href="#${x.id}">${x.id}</a></td>`
-          }
-     }).join("")}
+          })
+          .join("")}
 </tr>
 <tr>
-     ${QuestionSum.map((x, index) => {
-          if (x.type == "questionText") {
-               let checked = false
-               //console.log(LastDataText)
-               LastDataText.forEach((y) => {
-                    if (
-                         `${x.id}_${x.answersYes}` ===
-                         `${y.numberAnswer_Text}_${y.result_Text}`
-                    ) {
-                         checked = true
+     ${newQuestionSum
+          .map((x) => {
+               if (x.type == "questionCheckBox") {
+                    let check = false
+                    x.answerYes.forEach((answer) => {
+                         if (number_resultsCheckBoxArray.includes(answer.id)) {
+                              check = true
+                         } else {
+                              check = false
+                         }
+                    })
+                    if (check)
+                         return `<td class="dung"><a href="#${x.id}">${x.id}</a></td>`
+                    return `<td class="sai"><a href="#${x.id}">${x.id}</a></td>`
+               }
+          })
+          .join("")}
+</tr>
+<tr>
+     ${newQuestionSum
+          .map((x) => {
+               if (x.type == "questionButton") {
+                    let check = false
+                    DataButton.forEach((answer) => {
+                         if (
+                              x.answerYes.id ===
+                              `${answer.numberAnswer_Button}_${answer.result_Button}`
+                         )
+                              check = true
+                    })
+
+                    if (check)
+                         return `<td class="dung"><a href="#${x.id}">${x.id}</a></td>`
+                    return `<td class="sai"><a href="#${x.id}">${x.id}</a></td>`
+               }
+          })
+          .join("")}
+</tr>
+<tr>
+     ${newQuestionSum
+          .map((x) => {
+               if (x.type == "questionOptions") {
+                    let checked = false
+                    for (let i = 0; i < x.yesAnswerYes.length; i++) {
+                         if (
+                              x.yesAnswerYes[i].id ===
+                              number_resultsOptionsArray[i]
+                         ) {
+                              checked = true
+                         } else {
+                              checked = false
+                         }
                     }
-               })
-               if (checked)
-                    return `<td class="dung"><a href="#${x.id}">${x.id}</a></td>`
-               return `<td class="sai"><a href="#${x.id}">${x.id}</a></td>`
-          }
-     }).join("")}
+                    if (checked)
+                         return `<td class="dung"><a href="#${x.id}">${x.id}</a></td>`
+                    return `<td class="sai"><a href="#${x.id}">${x.id}</a></td>`
+               }
+          })
+          .join("")}
+</tr>
+<tr>
+     ${newQuestionSum
+          .map((x, index) => {
+               if (x.type == "questionText") {
+                    let checked = false
+                    //console.log(LastDataText)
+                    LastDataText.forEach((y) => {
+                         if (
+                              `${x.id}_${x.answersYes}` ===
+                              `${y.numberAnswer_Text}_${y.result_Text}`
+                         ) {
+                              checked = true
+                         }
+                    })
+                    if (checked)
+                         return `<td class="dung"><a href="#${x.id}">${x.id}</a></td>`
+                    return `<td class="sai"><a href="#${x.id}">${x.id}</a></td>`
+               }
+          })
+          .join("")}
 </tr>
      <div id="Check_Yes">
      Màu xanh là đáp án của bạn chính xác

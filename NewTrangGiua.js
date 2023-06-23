@@ -1,53 +1,62 @@
-import { QuestionSum } from "./Data.js"
+import { newQuestionSum } from "./Data.js"
 const $ = (id) => document.getElementById(id)
 let x = JSON.parse(localStorage.getItem("countacc"))
-
 if (x <= 0) {
      window.location.href = "Dangnhap.html"
 }
 $("container-map").innerHTML = `<table>
 <tr>
-     ${QuestionSum.map((x) => {
-          console.log(x.type)
-          if (x.type == "questionRadio")
-               return `<td id="question_${x.id}"><a href="#${x.id}">${x.id}</a></td>`
-          return ""
-     }).join("")}
+     ${newQuestionSum
+          .map((x) => {
+               if (x.type == "questionRadio")
+                    return `<td id="question_${x.id}"><a href="#${x.id}">${x.id}</a></td>`
+               return ""
+          })
+          .join("")}
 </tr>
 <tr>
-     ${QuestionSum.map((x) => {
-          if (x.type == "questionCheckBox")
-               return `<td id="question_${x.id}"><a href="#${x.id}">${x.id}</a></td>`
-     }).join("")}
+     ${newQuestionSum
+          .map((x) => {
+               if (x.type == "questionCheckBox")
+                    return `<td id="question_${x.id}"><a href="#${x.id}">${x.id}</a></td>`
+          })
+          .join("")}
 </tr>
 <tr>
-     ${QuestionSum.map((x) => {
-          if (x.type == "questionButton")
-               return `<td id="question_${x.id}"><a href="#${x.id}">${x.id}</a></td>`
-     }).join("")}
+     ${newQuestionSum
+          .map((x) => {
+               if (x.type == "questionButton")
+                    return `<td id="question_${x.id}"><a href="#${x.id}">${x.id}</a></td>`
+          })
+          .join("")}
 </tr>
 <tr>
-     ${QuestionSum.map((x) => {
-          if (x.type == "questionOptions")
-               return `<td id="question_${x.id}"><a href="#${x.id}">${x.id}</a></td>`
-     }).join("")}
+     ${newQuestionSum
+          .map((x) => {
+               if (x.type == "questionOptions")
+                    return `<td id="question_${x.id}"><a href="#${x.id}">${x.id}</a></td>`
+          })
+          .join("")}
 </tr>
 <tr>
-     ${QuestionSum.map((x) => {
-          if (x.type == "questionText")
-               return `<td id="question_${x.id}"><a href="#${x.id}">${x.id}</a></td>`
-     }).join("")}
+     ${newQuestionSum
+          .map((x) => {
+               if (x.type == "questionText")
+                    return `<td id="question_${x.id}"><a href="#${x.id}">${x.id}</a></td>`
+          })
+          .join("")}
 </tr>
 </table>`
 VoidDataRadio()
 function VoidDataRadio() {
      const divQuestion = document.getElementById("container_Radio")
-     divQuestion.innerHTML = QuestionSum.map((question, index) => {
-          if (question.type == "questionRadio") {
-               return `<div id="TypeRadio_${index + 1}">
+     divQuestion.innerHTML = newQuestionSum
+          .map((question, index) => {
+               if (question.type == "questionRadio") {
+                    return `<div id="TypeRadio_${index + 1}">
                <div class="Question_Radio" id="${question.id}">${
-                    question.question
-               }</div>
+                         question.question
+                    }</div>
     <div class="Answers_Radio">
       ${question.answers
            .map((answer) => {
@@ -55,20 +64,22 @@ function VoidDataRadio() {
            })
            .join("")}
     </div></div>`
-          }
-     }).join("")
+               }
+          })
+          .join("")
 }
 
 VoidDataCheckBox()
 function VoidDataCheckBox() {
      const divQuestion = document.getElementById("container_CheckBox")
-     divQuestion.innerHTML = QuestionSum.map((question, index) => {
-          if (question.type == "questionCheckBox") {
-               return `<div id="TypeCheckBox_${
-                    index + 1
-               }">  <div class="Question_CheckBox" id="${question.id}">${
-                    question.question
-               }</div>
+     divQuestion.innerHTML = newQuestionSum
+          .map((question, index) => {
+               if (question.type == "questionCheckBox") {
+                    return `<div id="TypeCheckBox_${
+                         index + 1
+                    }">  <div class="Question_CheckBox" id="${question.id}">${
+                         question.question
+                    }</div>
      <div class="Answers_CheckBox">
           ${question.answers
                .map((answer) => {
@@ -76,17 +87,19 @@ function VoidDataCheckBox() {
                })
                .join("")}
      </div> </div>`
-          }
-     }).join("")
+               }
+          })
+          .join("")
 }
 VoidDataButton()
 function VoidDataButton() {
      const divQuestion = document.getElementById("container_Button")
-     divQuestion.innerHTML = QuestionSum.map((question) => {
-          if (question.type == "questionButton") {
-               return ` <div class="TypeButton"><div class="Question_Button" id="${
-                    question.id
-               }">${question.question}</div>
+     divQuestion.innerHTML = newQuestionSum
+          .map((question) => {
+               if (question.type == "questionButton") {
+                    return ` <div class="TypeButton"><div class="Question_Button" id="${
+                         question.id
+                    }">${question.question}</div>
       <div class="Answers_Button">
         ${question.answers
              .map((answer) => {
@@ -94,29 +107,31 @@ function VoidDataButton() {
              })
              .join("")}
       </div></div>`
-          }
-     }).join("")
+               }
+          })
+          .join("")
 }
 
 VoidDataOptions()
 function VoidDataOptions() {
      const divQuestion = document.getElementById("container_Options")
-     divQuestion.innerHTML = QuestionSum.map((question) => {
-          if (question.type == "questionOptions") {
-               const answerOptions = question.answerYes
-                    .map((answer) => {
-                         return `<option id = "${answer.id}" value="${answer.value}">${answer.label}</option>
+     divQuestion.innerHTML = newQuestionSum
+          .map((question) => {
+               if (question.type == "questionOptions") {
+                    const answerOptions = question.answerYes
+                         .map((answer) => {
+                              return `<option id = "${answer.id}" value="${answer.value}">${answer.label}</option>
           `
-                    })
-                    .join("")
-               const answerInputs = question.answers
-                    .map((answer) => {
-                         return `<input type="text" id="${answer.id}" name="question_${question.id}" value="${answer.label}" />
+                         })
+                         .join("")
+                    const answerInputs = question.answers
+                         .map((answer) => {
+                              return `<input type="text" id="${answer.id}" name="question_${question.id}" value="${answer.label}" />
           <br />`
-                    })
-                    .join("")
+                         })
+                         .join("")
 
-               return `
+                    return `
                <div class="TypeOptions">
         <div class="Question_Options" id="${question.id}">${question.question}</div>
         <div class="QuestionAnswers_Options">
@@ -137,35 +152,37 @@ function VoidDataOptions() {
           </select>
         </div></div>
       `
-          }
-     }).join("")
+               }
+          })
+          .join("")
 }
 
 VoidataText()
 function VoidataText() {
      const divQuestion = document.getElementById("container_Text")
-     divQuestion.innerHTML = QuestionSum.map((question) => {
-          if (question.type == "questionText") {
-               return ` <div class="TypeText">
+     divQuestion.innerHTML = newQuestionSum
+          .map((question) => {
+               if (question.type == "questionText") {
+                    return ` <div class="TypeText">
                <div class="Question_Text" id="${question.id}">${question.question}</div>
                <input class="Answer_Text" type="text" id="${question.id}" name="questiontext_${question.id}" placeholder ="Nhập đáp án vào đây"/>
                </div>
                `
-          }
-     }).join("")
+               }
+          })
+          .join("")
 }
 
-QuestionSum.forEach((question) => {
+newQuestionSum.forEach((question) => {
      if (question.type == "questionButton") {
           const textButtons = document.querySelectorAll(
                `input[type="button"][name="question_${question.id}"]`
           )
           textButtons.forEach((button) => {
                button.addEventListener("click", (e) => {
-                    for (let i = 11; i <= 15; i++) {
-                         if (e.target.id.slice(0, 2) == i) {
-                              $(`question_${i}`).style.backgroundColor = "red"
-                         }
+                    if (e.target.id.split("_")[0] == question.id) {
+                         $(`question_${question.id}`).style.backgroundColor =
+                              "red"
                     }
                     textButtons.forEach((btn) => {
                          return btn.classList.remove("active")
@@ -182,10 +199,13 @@ function checkedOption() {
      textOptions.forEach((x) => {
           x.addEventListener("change", (e) => {
                console.log(e.target.name.substr(7))
-               for (let y = 16; y <= 20; y++) {
-                    if (e.target.name.substr(7) == y)
-                         $(`question_${y}`).style.backgroundColor = "red"
-               }
+               newQuestionSum.forEach((typeQuestion) => {
+                    if (typeQuestion.type == "questionOptions")
+                         if (e.target.name.substr(7) == typeQuestion.id)
+                              $(
+                                   `question_${typeQuestion.id}`
+                              ).style.backgroundColor = "red"
+               })
           })
      })
 }
@@ -195,15 +215,26 @@ function checkText() {
      textText.forEach((x) => {
           x.addEventListener("change", (e) => {
                console.log(e.target.value)
-               for (let y = 21; y <= 25; y++) {
-                    if (e.target.id == y && e.target.value !== undefined) {
-                         $(`question_${y}`).style.backgroundColor = "red"
+               newQuestionSum.forEach((typeQuestion) => {
+                    if (typeQuestion.type == "questionText") {
+                         if (
+                              e.target.id == typeQuestion.id &&
+                              e.target.value !== undefined
+                         ) {
+                              $(
+                                   `question_${typeQuestion.id}`
+                              ).style.backgroundColor = "red"
+                         }
+                         if (
+                              e.target.id == typeQuestion.id &&
+                              e.target.value === ""
+                         ) {
+                              $(
+                                   `question_${typeQuestion.id}`
+                              ).style.backgroundColor = "antiquewhite"
+                         }
                     }
-                    if (e.target.id == y && e.target.value === "") {
-                         $(`question_${y}`).style.backgroundColor =
-                              "antiquewhite"
-                    }
-               }
+               })
           })
      })
 }
@@ -222,84 +253,120 @@ function information() {
 
      $("container_count").innerHTML = html
 }
+
+// countdown()
+// function countdown() {
+//      var i = 1800000
+//      let minutes = Math.floor((i % (1000 * 60 * 60)) / (1000 * 60))
+//      let seconds = Math.floor((i % (1000 * 60)) / 1000)
+//      document.getElementById("time").innerHTML = minutes + "m " + seconds + "s "
+//      let x = setInterval(function () {
+//           document.getElementById("time").innerHTML =
+//                minutes + "m " + seconds + "s "
+//           seconds--
+//           if (seconds < 0) {
+//                seconds = 59
+//                minutes--
+//           }
+//           i--
+//           if (i < 0) {
+//                clearInterval(x)
+//                document.getElementById("time").innerHTML = "Hết giờ!"
+//           }
+//      }, 1000)
+//      setTimeout(() => {
+//           window.location.href = "NewTrangCuoi.html"
+//      }, 1800000)
+// }
+let timeWork = Number(JSON.parse(localStorage.getItem("TimeWork")))
 countdown()
 function countdown() {
-     var i = 1800000
-     var minutes = Math.floor((i % (1000 * 60 * 60)) / (1000 * 60))
-     var seconds = Math.floor((i % (1000 * 60)) / 1000)
+     let i = timeWork * 60 // Convert timeWork to minutes
+     let minutes, seconds
 
-     document.getElementById("time").innerHTML = minutes + "m " + seconds + "s "
-     var x = setInterval(function () {
+     let x = setInterval(function () {
+          minutes = Math.floor(i / 60)
+          seconds = i % 60
+
           document.getElementById("time").innerHTML =
                minutes + "m " + seconds + "s "
-          seconds--
-          if (seconds < 0) {
-               seconds = 59
-               minutes--
-          }
-          i--
-          if (i < 0) {
+
+          if (i <= 0) {
                clearInterval(x)
                document.getElementById("time").innerHTML = "Hết giờ!"
+               setTimeout(() => {
+                    window.location.href = "NewTrangCuoi.html"
+               }, 1000)
           }
+
+          i--
      }, 1000)
-     setTimeout(() => {
-          window.location.href = "TrangCuoi.html"
-     }, 1800000)
 }
 
 RadioChecked()
 function RadioChecked() {
-     for (let z = 1; z <= 5; z++) {
-          let x = document.querySelectorAll(
-               `#TypeRadio_${z} .Answers_Radio .inputRadio`
-          )
-          let y = document.querySelectorAll(`#TypeRadio_${z} input[type=radio]`)
-          for (let i = 0; i < y.length; i++) {
-               y[i].addEventListener("change", () => {
-                    if (y[i].checked) {
-                         for (let j = 0; j < x.length; j++) {
-                              x[j].style.backgroundColor = "white"
+     newQuestionSum.forEach((typeQuestion) => {
+          if (typeQuestion.type == "questionRadio") {
+               let x = document.querySelectorAll(
+                    `#TypeRadio_${typeQuestion.id} .Answers_Radio .inputRadio`
+               )
+               console.log(x)
+               let y = document.querySelectorAll(
+                    `#TypeRadio_${typeQuestion.id} input[type=radio]`
+               )
+               for (let i = 0; i < y.length; i++) {
+                    y[i].addEventListener("change", () => {
+                         if (y[i].checked) {
+                              for (let j = 0; j < x.length; j++) {
+                                   x[j].style.backgroundColor = "white"
+                              }
+                              x[i].style.backgroundColor = "#54e369"
+                              $(
+                                   `question_${typeQuestion.id}`
+                              ).style.backgroundColor = "red"
                          }
-                         x[i].style.backgroundColor = "#54e369"
-                         $(`question_${z}`).style.backgroundColor = "red"
-                    }
-               })
+                    })
+               }
           }
-     }
+     })
 }
 CheckCheckBox()
 function CheckCheckBox() {
-     for (let z = 6, k = 6; z <= 10, k <= 10; z++, k++) {
-          let checkboxStates = []
-          let x = document.querySelectorAll(
-               `#TypeCheckBox_${z} .Answers_CheckBox .TypeCheckBoxChild`
-          )
-          let y = document.querySelectorAll(
-               `#TypeCheckBox_${z} input[type=checkbox]`
-          )
-          for (let i = 0; i < y.length; i++) {
-               checkboxStates.push(false)
-               y[i].addEventListener("change", () => {
-                    checkboxStates[i] = y[i].checked
-                    console.log(y[i].checked)
-                    if (checkboxStates[i]) {
-                         $(`question_${k}`).style.backgroundColor = "red"
-                         x[i].style.backgroundColor = "#54e369"
-                    } else {
-                         $(`question_${k}`).style.backgroundColor =
-                              "antiquewhite"
-                         x[i].style.backgroundColor = "antiquewhite"
-                    }
-               })
+     newQuestionSum.forEach((typeQuestion) => {
+          if (typeQuestion.type == "questionCheckBox") {
+               let checkboxStates = []
+               let x = document.querySelectorAll(
+                    `#TypeCheckBox_${typeQuestion.id} .Answers_CheckBox .TypeCheckBoxChild`
+               )
+               let y = document.querySelectorAll(
+                    `#TypeCheckBox_${typeQuestion.id} input[type=checkbox]`
+               )
+               for (let i = 0; i < y.length; i++) {
+                    checkboxStates.push(false)
+                    y[i].addEventListener("change", () => {
+                         checkboxStates[i] = y[i].checked
+                         console.log(y[i].checked)
+                         if (checkboxStates[i]) {
+                              $(
+                                   `question_${typeQuestion.id}`
+                              ).style.backgroundColor = "red"
+                              x[i].style.backgroundColor = "#54e369"
+                         } else {
+                              $(
+                                   `question_${typeQuestion.id}`
+                              ).style.backgroundColor = "antiquewhite"
+                              x[i].style.backgroundColor = "antiquewhite"
+                         }
+                    })
+               }
           }
-     }
+     })
 }
 
 $("form").addEventListener("click", () => {
      let count = 0.0
      let ArrayCheck = []
-     QuestionSum.forEach((question) => {
+     newQuestionSum.forEach((question) => {
           if (question.type == "questionRadio") {
                const selectedAnswer = document.querySelector(
                     `input[type ="radio"][name="question_${question.id}"]:checked`
@@ -317,7 +384,7 @@ $("form").addEventListener("click", () => {
           }
      })
 
-     QuestionSum.forEach((question) => {
+     newQuestionSum.forEach((question) => {
           if (question.type == "questionCheckBox") {
                const selectedAnswers = document.querySelectorAll(
                     `input[type="checkbox"][name="question_${question.id}"]:checked`
@@ -351,7 +418,7 @@ $("form").addEventListener("click", () => {
      const clasButton = document.getElementsByClassName("active")
      const selectButton = []
      const checkButtonYes = []
-     QuestionSum.forEach((question) => {
+     newQuestionSum.forEach((question) => {
           if (question.type == "questionButton") {
                checkButtonYes.push(question.answerYes.id)
           }
@@ -362,7 +429,7 @@ $("form").addEventListener("click", () => {
           const numberAnswer_Button = x.substring(0, 2)
           const result_Button = x.split("_")[1]
           let typeQuestion = ""
-          QuestionSum.forEach((question) => {
+          newQuestionSum.forEach((question) => {
                if (question.type == "questionButton") {
                     typeQuestion = question.type
                }
@@ -400,7 +467,7 @@ $("form").addEventListener("click", () => {
                const numberAnswer_Options = select.name.split("_")[1]
                const result_Options = selectedOption.value
                let typeQuestion = ""
-               QuestionSum.forEach((question) => {
+               newQuestionSum.forEach((question) => {
                     if (question.type == "questionOptions") {
                          typeQuestion = question.type
                     }
@@ -419,7 +486,7 @@ $("form").addEventListener("click", () => {
                )
           })
           const checkOptionsYes = []
-          QuestionSum.forEach((question) => {
+          newQuestionSum.forEach((question) => {
                if (question.type == "questionOptions") {
                     question.yesAnswerYes.forEach((answer) => {
                          checkOptionsYes.push(answer.id)
@@ -436,7 +503,7 @@ $("form").addEventListener("click", () => {
      }
      const selectText = []
 
-     QuestionSum.forEach((question) => {
+     newQuestionSum.forEach((question) => {
           if (question.type == "questionText") {
                const selectedAnswerText = document.querySelectorAll(
                     `input[type=text][name="questiontext_${question.id}"]`
@@ -466,7 +533,7 @@ $("form").addEventListener("click", () => {
           localStorage.setItem("count", JSON.stringify(count))
           // countLocal.UserCount.push(count)
           // console.log(countLocal.UserCount)
-          window.location.href = "TrangCuoi.html"
+          window.location.href = "NewTrangCuoi.html"
      }
 })
 function pushQuestionToLocal(question) {

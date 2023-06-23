@@ -32,23 +32,44 @@
                     margin-top: 50px;
                }
                #Button {
-                    border: none;
-                    background-color: rgb(205, 11, 11);
-                    border-radius: 50px;
                     display: flex;
-                    width: 150px;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: rgb(205, 11, 11);
+                    border: none;
+                    border-radius: 50px;
+                    width: 170px;
                     height: 50px;
-                    padding-left: 45px;
                     font-size: 16px;
-                    margin-left: 650px;
                     color: wheat;
+               }
+               #Button2 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: rgb(205, 11, 11);
+                    border: none;
+                    border-radius: 50px;
+                    width: 170px;
+                    height: 50px;
+                    font-size: 16px;
+                    color: wheat;
+                    margin-left: 10px;
+               }
+               #contentNew {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
                }
           </style>
      </head>
      <body>
           <div id="content">Bài kiểm tra trắc nghiệm về kiến thức CSS</div>
-          <input id="Button" type="button" value="Bắt đầu" />
-          <div id="content2">Bài kiểm tra gồm có 30 câu / 30p</div>
+          <div id="contentNew">
+               <input id="Button" type="button" value="Form tham khảo" />
+               <input id="Button2" type="button" value="Tạo câu hỏi" />
+          </div>
+          <div id="content2">Bài kiểm tra tham khảo gồm có 30 câu / 30p</div>
      </body>
      <script>
           let x = JSON.parse(localStorage.getItem("countacc"))
@@ -60,6 +81,13 @@
                var result = confirm("Bạn đã sẵn sàng ")
                if (result == true) {
                     window.location.href = "TrangGiua.html"
+               }
+          }
+          const click2 = document.getElementById("Button2")
+          click2.onclick = () => {
+               var result = confirm("Bạn đã sẵn sàng ")
+               if (result == true) {
+                    window.location.href = "DatCauHoi.html"
                }
           }
      </script>

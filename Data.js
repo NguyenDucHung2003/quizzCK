@@ -1,4 +1,4 @@
-const questionData = [
+const QuestionSum = [
      {
           id: 1,
           type: "questionRadio",
@@ -83,8 +83,6 @@ const questionData = [
                label: "Trong thẻ <head>",
           },
      },
-]
-const questionDataCheckBox = [
      {
           id: 6,
           type: "questionCheckBox",
@@ -180,8 +178,6 @@ const questionDataCheckBox = [
                },
           ],
      },
-]
-const questionDataButton = [
      {
           id: 11,
           type: "questionButton",
@@ -294,8 +290,6 @@ const questionDataButton = [
                label: "Hyper Text Markup Language",
           },
      },
-]
-const questionOptions = [
      {
           id: 16,
           type: "questionOptions",
@@ -326,6 +320,28 @@ const questionOptions = [
                     id: "16_d",
                     value: "d",
                     label: "Học sinh kém",
+               },
+          ],
+          yesAnswerYes: [
+               {
+                    id: "16_d",
+                    value: "d",
+                    label: "Học sinh kém",
+               },
+               {
+                    id: "16_c",
+                    value: "c",
+                    label: "Học sinh trung bình",
+               },
+               {
+                    id: "16_b",
+                    value: "b",
+                    label: "Học sinh khá",
+               },
+               {
+                    id: "16_a",
+                    value: "a",
+                    label: "Học sinh giỏi",
                },
           ],
      },
@@ -361,6 +377,28 @@ const questionOptions = [
                     label: "Bên dưới không có gì",
                },
           ],
+          yesAnswerYes: [
+               {
+                    id: "17_b",
+                    value: "b",
+                    label: "Bên phải không có gì",
+               },
+               {
+                    id: "17_c",
+                    value: "c",
+                    label: "Bên trên không có gì",
+               },
+               {
+                    id: "17_d",
+                    value: "d",
+                    label: "Bên dưới không có gì",
+               },
+               {
+                    id: "17_a",
+                    value: "a",
+                    label: "Bên trái không có gì",
+               },
+          ],
      },
      {
           id: 18,
@@ -392,6 +430,28 @@ const questionOptions = [
                     id: "18_d",
                     value: "d",
                     label: "Bên dưới không có gì",
+               },
+          ],
+          yesAnswerYes: [
+               {
+                    id: "18_b",
+                    value: "b",
+                    label: "Bên phải không có gì",
+               },
+               {
+                    id: "18_c",
+                    value: "c",
+                    label: "Bên trên không có gì",
+               },
+               {
+                    id: "18_d",
+                    value: "d",
+                    label: "Bên dưới không có gì",
+               },
+               {
+                    id: "18_a",
+                    value: "a",
+                    label: "Bên trái không có gì",
                },
           ],
      },
@@ -427,6 +487,28 @@ const questionOptions = [
                     label: "Bên dưới không có gì",
                },
           ],
+          yesAnswerYes: [
+               {
+                    id: "19_b",
+                    value: "b",
+                    label: "Bên phải không có gì",
+               },
+               {
+                    id: "19_c",
+                    value: "c",
+                    label: "Bên trên không có gì",
+               },
+               {
+                    id: "19_d",
+                    value: "d",
+                    label: "Bên dưới không có gì",
+               },
+               {
+                    id: "19_a",
+                    value: "a",
+                    label: "Bên trái không có gì",
+               },
+          ],
      },
      {
           id: 20,
@@ -460,9 +542,29 @@ const questionOptions = [
                     label: "Bên dưới không có gì",
                },
           ],
+          yesAnswerYes: [
+               {
+                    id: "20_b",
+                    value: "b",
+                    label: "Bên phải không có gì",
+               },
+               {
+                    id: "20_c",
+                    value: "c",
+                    label: "Bên trên không có gì",
+               },
+               {
+                    id: "20_d",
+                    value: "d",
+                    label: "Bên dưới không có gì",
+               },
+               {
+                    id: "20_a",
+                    value: "a",
+                    label: "Bên trái không có gì",
+               },
+          ],
      },
-]
-const questionText = [
      {
           id: 21,
           type: "questionText",
@@ -494,10 +596,6 @@ const questionText = [
           answersYes: "1",
      },
 ]
-export {
-     questionData,
-     questionDataCheckBox,
-     questionDataButton,
-     questionOptions,
-     questionText,
-}
+const newQuestionSum = JSON.parse(localStorage.getItem("ArrayDataQuestion"))
+console.log(newQuestionSum)
+export { QuestionSum, newQuestionSum }

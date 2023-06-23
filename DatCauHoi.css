@@ -1,0 +1,111 @@
+* {
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 20px;
+}
+body {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+}
+
+#content div {
+     margin: 10px;
+}
+
+#time {
+     width: 100px;
+     height: 35px;
+}
+#a,
+#b,
+#c,
+#d {
+     display: flex;
+     margin-bottom: 10px;
+     width: 500px;
+     height: 35px;
+}
+#confirm {
+     background-color: red;
+     width: 100px;
+     height: 30px;
+     border-radius: 3px;
+     text-align: center;
+     line-height: 30px;
+     margin-left: auto;
+     margin-right: auto;
+}
+#valueQuestion {
+     width: 500px;
+     height: 35px;
+}
+#selectTypeQuestion {
+     width: 500px;
+     height: 35px;
+}
+#yesAnswer div {
+     display: flex;
+}
+#Send {
+     background-color: red;
+     width: 100px;
+     height: 30px;
+     border-radius: 3px;
+     text-align: center;
+     margin: 10px 0px 0px 200px;
+}
+
+#answer_a,
+#answer_b,
+#answer_c,
+#answer_d {
+     display: flex;
+     margin-bottom: 10px;
+}
+#valueQuestion_a,
+#valueQuestion_b,
+#valueQuestion_c,
+#valueQuestion_d {
+     display: flex;
+     width: 500px;
+     height: 35px;
+}
+#questionData input {
+     margin-bottom: 10px;
+}
+#select_a,
+#select_b,
+#select_c,
+#select_d {
+     width: 100px;
+     height: 35px;
+}
+#answerText {
+     width: 500px;
+     height: 35px;
+}
+#content2 {
+     margin-right: 50px;
+}
+#content2 div {
+     margin-bottom: 7px;
+}
+#displayQuestionAnswer {
+     border: 1px solid black;
+     width: 600px;
+     height: 650px;
+     overflow: auto;
+}
+#contentMain div {
+     margin-bottom: 7px;
+}
+#contentMain button {
+     width: 100px;
+     height: 30px;
+     border-radius: 3px;
+     text-align: center;
+     margin: 10px 0px 0px 250px;
+}
+#cauhoi2 {
+     text-align: center;
+}
